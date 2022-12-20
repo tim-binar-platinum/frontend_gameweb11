@@ -1,8 +1,8 @@
-
 import React from "react";
 import "../styles/landing.css";
 import { Navbar } from "reactstrap";
 import art from "../public/image/landingpage-art.png";
+import Image from "next/image";
 
 function HomePage() {
   return (
@@ -11,7 +11,7 @@ function HomePage() {
         <div className="container pt-3">
           <div className="row">
             <div className="col col-md-12 col-lg-4 d-flex">
-              <img
+              <Image
                 id="menubar-icon"
                 src="menubar.svg"
                 alt=""
@@ -43,7 +43,7 @@ function HomePage() {
               <button className="rounded-5 btn-lg">PLAY NOW</button>
             </div>
             <div id="art-game" className="col col-1 col-lg-5">
-              <img className="img-fluid pt-5" src={art} alt="" />
+              <Image className="img-fluid pt-5" src={art} alt="" />
             </div>
           </div>
         </div>
