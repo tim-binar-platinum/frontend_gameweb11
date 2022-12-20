@@ -1,0 +1,7 @@
+.spinner {
+  visibility: hidden;
+}
+
+.spinner:active {
+  visibility: visible;
+}

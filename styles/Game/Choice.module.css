@@ -1,0 +1,15 @@
+.choiceIcon {
+  border-radius: 20%;
+  transition: transform 0.5s;
+}
+
+.choiceIcon:hover {
+  cursor: pointer;
+  background-color: rgb(224, 224, 224);
+  transform: scale(1.1);
+}
+
+.choice img {
+  width: 120px;
+  margin: 40px 0;
+}

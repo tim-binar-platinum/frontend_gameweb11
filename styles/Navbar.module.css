@@ -1,0 +1,29 @@
+.container {
+  background-color: rgb(255, 255, 255);
+  height: 95px;
+}
+
+.navbar h1 a {
+  text-decoration: none;
+  color: #2da0f8;
+  margin-left: 0vw;
+}
+
+.navbar ul a {
+  list-style: none;
+  font-size: 1.7vw;
+  font-weight: bold;
+  color: #2da0f8;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px
+}
+
+@media screen and (max-width: 600px) {
+  .navbar ul a {
+    font-size: 4vw;
+  }
+  .navbar h1 a {
+    margin-left: 7vw;
+  }
+}
