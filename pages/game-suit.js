@@ -1,6 +1,4 @@
-
 import React, { useState } from "react";
-
 import axios from "axios";
 import { Title } from "./components/Game/Title";
 import { Round } from "./components/Game/Round";

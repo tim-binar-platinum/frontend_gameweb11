@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Spinner } from "react-bootstrap";
+// eslint-disable-next-line no-unused-vars
 import styles from "../../styles/Button.module.css";
 
 function ButtonComp({ onClick, loading }) {
