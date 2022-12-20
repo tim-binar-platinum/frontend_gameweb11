@@ -1,7 +1,7 @@
-
 import React from "react";
 import Link from "next/link";
 import styles from "../../styles/Navbar.module.css";
+import Image from "next/image";
 
 function Navbar() {
   return (
@@ -10,7 +10,7 @@ function Navbar() {
         <div className="container pt-3">
           <div className="row">
             <div className="col col-md-12 col-lg-4 d-flex">
-              <img
+              <Image
                 id="menubar-icon"
                 src="menubar.svg"
                 alt=""
