@@ -1,4 +1,3 @@
-
 import Hero from "./components/Landing/Hero";
 import Service from "./components/Landing/Service";
 import Faq from "./components/Landing/Faq";

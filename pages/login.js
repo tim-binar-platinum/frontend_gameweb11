@@ -79,7 +79,7 @@ function Login() {
                 <Link href="/register">
                   <button
                     type="submit"
-                    className="btn btn-warning btn-lg btn-block mt-5"
+                    className="btn btn-warning btn-lg btn-block mt-5" style={{ marginLeft: "1rem" }}
                   >
                     Register
                   </button>

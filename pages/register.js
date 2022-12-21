@@ -1,4 +1,3 @@
-
 import {
   Button, Container, Form, Label, Input, FormGroup,
 } from "reactstrap";
@@ -59,7 +58,6 @@ export default function Create() {
     gender: gender.gender,
   };
 
-  // eslint-disable-next-line consistent-return
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!formInput.name) {
