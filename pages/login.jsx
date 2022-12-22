@@ -1,6 +1,4 @@
-
 import React, { useState } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
 import Input from "./components/Input";
@@ -79,7 +77,8 @@ function Login() {
                 <Link href="/register">
                   <button
                     type="submit"
-                    className="btn btn-warning btn-lg btn-block mt-5" style={{ marginLeft: "1rem" }}
+                    className="btn btn-warning btn-lg btn-block mt-5"
+                    style={{ marginLeft: "1rem" }}
                   >
                     Register
                   </button>

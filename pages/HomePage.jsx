@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/landing.css";
 import { Navbar } from "reactstrap";
-import art from "../public/image/landingpage-art.png";
 import Image from "next/image";
+import art from "../public/image/landingpage-art.png";
 
 function HomePage() {
   return (
@@ -18,7 +18,7 @@ function HomePage() {
                 className="img-fluid"
               />
               <h1>
-                <a className="color">Last of Game</a>
+                <a href="/" className="color">Last of Game</a>
               </h1>
             </div>
             <div id="menu" className="col-8 text-uppercase pt-2 pl-5 pr-5">
