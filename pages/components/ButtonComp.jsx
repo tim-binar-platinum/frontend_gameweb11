@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Spinner } from "react-bootstrap";
-import styles from "../../styles/Button.module.css";
+// import styles from "../../styles/Button.module.css";
 
 function ButtonComp({ onClick, loading }) {
   const [showSpinner, setShowSpinner] = useState(loading);

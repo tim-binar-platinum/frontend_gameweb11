@@ -1,5 +1,7 @@
+/* eslint-disable indent */
 import { settings } from "./configs/game";
 import styles from "../../../styles/Game/Computer.module.css";
+import Image from "next/image";
 
 export const Computer = ({
   botScore,
@@ -17,12 +19,13 @@ export const Computer = ({
           <h3 className={styles.waitingMessage}>{settings.waitingMessage}</h3>
         ) : (
           <>
-            <img
+            <Image
               src={
                 botSelection === "Rock"
                   ? rockIcon
                   : botSelection === "Paper"
-                  ? paperIcon
+                  ? // eslint-disable-next-line indent
+                    paperIcon
                   : scissorsIcon
               }
               alt="icon"
