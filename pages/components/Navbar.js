@@ -10,12 +10,6 @@ function Navbar() {
         <div className="container pt-3">
           <div className="row">
             <div className="col col-md-12 col-lg-4 d-flex">
-              <img
-                id="menubar-icon"
-                src="menubar.svg"
-                alt=""
-                className="img-fluid"
-              />
               <h1>
                 <Link href="/">Last of Game</Link>
               </h1>
