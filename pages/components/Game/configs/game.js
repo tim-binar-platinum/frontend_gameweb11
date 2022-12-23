@@ -1,4 +1,4 @@
-const settings = {
+export const settings = {
   gameName: "Suit Game",
   userName: "User",
   botName: "Computer",
@@ -8,5 +8,3 @@ const settings = {
   waitingMessage: "Waiting for your selection!",
   winTarget: 3,
 };
-
-export default settings;

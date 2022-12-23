@@ -12,7 +12,7 @@ import Computer from "./components/Game/Computer";
 import Score from "./components/Game/Score";
 import Message from "./components/Game/Message";
 import Reset from "./components/Game/Reset";
-import settings from "./components/Game/configs/game";
+import { settings } from "./components/Game/configs/game";
 
 import rock from "../public/Game/batu.png";
 import paper from "../public/Game/kertas.png";

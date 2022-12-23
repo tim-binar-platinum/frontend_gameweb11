@@ -1,5 +1,5 @@
 /* eslint-disable indent */
-import settings from "./configs/game";
+import { settings } from "./configs/game";
 import styles from "../../../styles/Game/Computer.module.css";
 import Image from "next/image";
 

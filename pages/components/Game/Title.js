@@ -1,4 +1,4 @@
-import settings from "./configs/game";
+import { settings } from "./configs/game";
 import styles from "../../../styles/Game/Title.module.css";
 
 const Title = () => {
