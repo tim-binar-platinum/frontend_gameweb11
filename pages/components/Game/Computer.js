@@ -3,7 +3,7 @@ import { settings } from "./configs/game";
 import styles from "../../../styles/Game/Computer.module.css";
 import Image from "next/image";
 
-export const Computer = ({
+const Computer = ({
   botScore,
   userSelection,
   botSelection,
@@ -41,3 +41,5 @@ export const Computer = ({
     </div>
   );
 };
+
+export default Computer;

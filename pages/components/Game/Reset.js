@@ -1,7 +1,7 @@
 import { settings } from "./configs/game";
 import styles from "../../../styles/Game/Reset.module.css";
 
-export const Reset = ({ onClick, userSelection, userScore, botScore }) => {
+const Reset = ({ onClick, userSelection, userScore, botScore }) => {
   return (
     userSelection !== "" && (
       <div onClick={onClick} className={styles.reset}>
@@ -14,3 +14,5 @@ export const Reset = ({ onClick, userSelection, userScore, botScore }) => {
     )
   );
 };
+
+export default Reset;

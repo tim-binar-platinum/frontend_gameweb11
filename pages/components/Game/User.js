@@ -1,7 +1,7 @@
 import { settings } from "./configs/game";
 import styles from "../../../styles/Game/User.module.css";
 
-export const User = ({ userScore, userSelection, children }) => {
+const User = ({ userScore, userSelection, children }) => {
   return (
     <div className={styles.userCard}>
       <h1>{settings.userName}</h1>
@@ -22,3 +22,5 @@ export const User = ({ userScore, userSelection, children }) => {
     </div>
   );
 };
+
+export default User;
