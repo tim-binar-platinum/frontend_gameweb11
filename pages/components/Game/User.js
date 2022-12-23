@@ -1,4 +1,4 @@
-import { settings } from "./configs/game";
+import settings from "./configs/game";
 import styles from "../../../styles/Game/User.module.css";
 
 const User = ({ userScore, userSelection, children }) => {

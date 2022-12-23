@@ -1,4 +1,4 @@
-import { settings } from "./configs/game";
+import settings from "./configs/game";
 import styles from "../../../styles/Game/Reset.module.css";
 
 const Reset = ({ onClick, userSelection, userScore, botScore }) => {
