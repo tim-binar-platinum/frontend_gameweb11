@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import {
-  FaFacebook, FaTwitter, FaInstagram, FaYoutube,
-} from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
-    <div className="footer pb-3 pt-4">
+    <div className="footer pb-3 pt-4" id="footer">
       <Container data-aos="fade-right">
         <Row>
           <Col>

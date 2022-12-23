@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 
 import Link from "next/link";
@@ -38,20 +37,20 @@ function Login() {
         alert("login sukses");
         console.log(
           "token di session storage",
-          sessionStorage.getItem("accessToken"),
+          sessionStorage.getItem("accessToken")
         );
       });
   };
   return (
     <div id={styles.login}>
       <section className="vh-100">
-        <div className="container py-5 h-100">
+        <div className="container py-5 h-100" data-testid="container-login">
           <div className="row d-flex align-items-center justify-content-center h-100">
             <div className="col-md-8 col-lg-7 col-xl-6">
               <Image src={art} className="img-fluid" alt="phone" />
             </div>
             <div className="col-md-7 col-lg-5 col-xl-5 offset-xl-1 text-white">
-              <form onSubmit={handleLogin}>
+              <form onSubmit={handleLogin} data-testid="form-login">
                 {/* Email input */}
                 <Input
                   type="text"
