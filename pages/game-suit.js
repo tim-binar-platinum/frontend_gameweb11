@@ -1,7 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable indent */
-import React, { useState } from "react";
 
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 import Title from "./components/Game/Title";
 import Round from "./components/Game/Round";
 import Playground from "./components/Game/Playground";
@@ -12,8 +12,8 @@ import Computer from "./components/Game/Computer";
 import Score from "./components/Game/Score";
 import Message from "./components/Game/Message";
 import Reset from "./components/Game/Reset";
-import { settings } from "./components/Game/configs/game";
-
+import { settings } from "../configs/game";
+import axiosConfig from "./api/axiosConfig";
 import rock from "../public/Game/batu.png";
 import paper from "../public/Game/kertas.png";
 import scissors from "../public/Game/gunting.png";
@@ -21,7 +21,9 @@ import scissors from "../public/Game/gunting.png";
 import styles from "../styles/Game/GameSuit.module.css";
 
 export default function GameDetailPages() {
-  const [game, setGame] = useState({
+  const [token, setToken] = useState();
+  const [user, setUser] = useState();
+  let [game, setGame] = useState({
     userSelection: "",
     botSelection: "",
     round: 0,
@@ -29,7 +31,6 @@ export default function GameDetailPages() {
     botScore: 0,
     message: "",
   });
-
   const reset = () => {
     setGame({
       ...game,
@@ -41,17 +42,38 @@ export default function GameDetailPages() {
       message: "",
     });
   };
-
   const { winMessage, tieMessage, lostMessage, winTarget } = settings;
   const { botScore, userScore } = game;
+  let config;
 
-  const token = sessionStorage.getItem("accessToken");
-  console.log(token);
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem("token"));
+    if (item) {
+      config = {
+        headers: { Authorization: `Bearer ${token}` },
+      };
+      setToken(item);
+    }
+  });
 
-  const config = {
-    headers: { Authorization: `Bearer ${token}` },
+  console.log("ini token", token);
+
+  const userData = async () => {
+    console.log("ini config", config);
+    const { data } = await axiosConfig.get("/users/profile", {
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    setUser(data.data);
   };
+  useEffect(() => {
+    if (!token) {
+      return;
+    } else {
+      userData();
+    }
+  }, [token]);
 
+  console.log("ini user", user);
   const play = async (e) => {
     if (botScore < winTarget) {
       const userSelection = e.target.parentNode.getAttribute("value");
@@ -62,11 +84,8 @@ export default function GameDetailPages() {
       userSelection === botSelection
         ? setGame({
             ...(game.message = tieMessage),
-            ...(await axios.post(
-              "http://103.181.143.76:4000/game",
-              { status: "tie" },
-              config
-            )),
+            ...(await axiosConfig.post("/game", { status: "tie" }, config)),
+            ...userData(),
           })
         : (userSelection === "Rock" && botSelection === "Scissors") ||
           (userSelection === "Paper" && botSelection === "Rock") ||
@@ -74,20 +93,14 @@ export default function GameDetailPages() {
         ? setGame({
             ...(game.userScore += 1),
             ...(game.message = winMessage),
-            ...(await axios.post(
-              "http://103.181.143.76:4000/game",
-              { status: "win" },
-              config
-            )),
+            ...(await axiosConfig.post("/game", { status: "win" }, config)),
+            ...userData(),
           })
         : setGame({
             ...(game.botScore += 1),
             ...(game.message = lostMessage),
-            ...(await axios.post(
-              "http://103.181.143.76:4000/game",
-              { status: "lose" },
-              config
-            )),
+            ...(await axiosConfig.post("/game", { status: "lose" }, config)),
+            ...userData(),
           });
 
       setGame({
@@ -98,14 +111,16 @@ export default function GameDetailPages() {
       });
     }
   };
-
+  if (user == undefined) {
+    return <div>loading</div>;
+  }
   return (
     <div id={styles.suit} className={styles.gamePages}>
       <Title />
       <Round {...game} />
       <Playground>
         <Profile>
-          <User {...game}>
+          <User {...game} userName={user?.username} userPoints={user?.points}>
             <Choice {...game} value="Rock" onClick={play} choiceIcon={rock} />
             <Choice {...game} value="Paper" onClick={play} choiceIcon={paper} />
             <Choice
