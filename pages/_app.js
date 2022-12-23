@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import Script from "next/script";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/global.css";
 import "../styles/main.css";
@@ -7,6 +8,10 @@ import aos from "aos";
 import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }) {
+  <Script
+    src="https://upload-widget.cloudinary.com/global/all.js"
+    type="text/javascript"
+  />;
   useEffect(() => {
     aos.init({
       easing: "ease-out-cubic",

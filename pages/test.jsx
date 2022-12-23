@@ -1,13 +1,12 @@
-
 import { useState } from "react";
-import ButtonComp from "./components/ButtonComp";
+import UploadButton from "./components/UploadButton";
 
 function Test() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div>
-      <ButtonComp loading={loading} onClick={() => setLoading(!loading)} />
+    <div className="test">
+      <UploadButton />
     </div>
   );
 }
