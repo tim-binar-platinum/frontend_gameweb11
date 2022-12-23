@@ -1,18 +1,18 @@
-
+/* eslint-disable indent */
 import React, { useState } from "react";
 
 import axios from "axios";
-import { Title } from "./components/Game/Title";
-import { Round } from "./components/Game/Round";
-import { Playground } from "./components/Game/Playground";
-import { Profile } from "./components/Game/Profile";
-import { User } from "./components/Game/User";
-import { Choice } from "./components/Game/Choice";
-import { Computer } from "./components/Game/Computer";
-import { Score } from "./components/Game/Score";
-import { Message } from "./components/Game/Message";
-import { Reset } from "./components/Game/Reset";
-import { settings } from "./components/Game/configs/game";
+import Title from "./components/Game/Title";
+import Round from "./components/Game/Round";
+import Playground from "./components/Game/Playground";
+import Profile from "./components/Game/Profile";
+import User from "./components/Game/User";
+import Choice from "./components/Game/Choice";
+import Computer from "./components/Game/Computer";
+import Score from "./components/Game/Score";
+import Message from "./components/Game/Message";
+import Reset from "./components/Game/Reset";
+import settings from "./components/Game/configs/game";
 
 import rock from "../public/Game/batu.png";
 import paper from "../public/Game/kertas.png";
@@ -42,9 +42,7 @@ export default function GameDetailPages() {
     });
   };
 
-  const {
-    winMessage, tieMessage, lostMessage, winTarget,
-  } = settings;
+  const { winMessage, tieMessage, lostMessage, winTarget } = settings;
   const { botScore, userScore } = game;
 
   const token = sessionStorage.getItem("accessToken");
@@ -63,32 +61,32 @@ export default function GameDetailPages() {
 
       userSelection === botSelection
         ? setGame({
-          ...(game.message = tieMessage),
-          ...(await axios.post(
-            "http://103.181.143.76:4000/game",
-            { status: "tie" },
-            config,
-          )),
-        })
-        : (userSelection === "Rock" && botSelection === "Scissors")
-          || (userSelection === "Paper" && botSelection === "Rock")
-          || (userSelection === "Scissors" && botSelection === "Paper")
-          ? setGame({
+            ...(game.message = tieMessage),
+            ...(await axios.post(
+              "http://103.181.143.76:4000/game",
+              { status: "tie" },
+              config
+            )),
+          })
+        : (userSelection === "Rock" && botSelection === "Scissors") ||
+          (userSelection === "Paper" && botSelection === "Rock") ||
+          (userSelection === "Scissors" && botSelection === "Paper")
+        ? setGame({
             ...(game.userScore += 1),
             ...(game.message = winMessage),
             ...(await axios.post(
               "http://103.181.143.76:4000/game",
               { status: "win" },
-              config,
+              config
             )),
           })
-          : setGame({
+        : setGame({
             ...(game.botScore += 1),
             ...(game.message = lostMessage),
             ...(await axios.post(
               "http://103.181.143.76:4000/game",
               { status: "lose" },
-              config,
+              config
             )),
           });
 
