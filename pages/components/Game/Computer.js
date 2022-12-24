@@ -1,4 +1,6 @@
 import { settings } from "../../../configs/game";
+/* eslint-disable indent */
+import { settings } from "../../../configs/game";
 import styles from "../../../styles/Game/Computer.module.css";
 import Image from "next/image";
 
@@ -23,8 +25,9 @@ const Computer = ({
                 botSelection === "Rock"
                   ? rockIcon
                   : botSelection === "Paper"
-                    ? paperIcon
-                    : scissorsIcon
+                  ? // eslint-disable-next-line indent
+                    paperIcon
+                  : scissorsIcon
               }
               alt="icon"
             />
