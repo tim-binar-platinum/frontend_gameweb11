@@ -72,6 +72,7 @@ function Login() {
                 <button
                   type="submit"
                   className="btn btn-primary btn-lg btn-block mt-5"
+                  data-testid="button-login"
                 >
                   Sign in
                 </button>
@@ -79,6 +80,7 @@ function Login() {
                   <button
                     type="submit"
                     className="btn btn-warning btn-lg btn-block mt-5"
+                    data-testid="button-register"
                   >
                     Register
                   </button>

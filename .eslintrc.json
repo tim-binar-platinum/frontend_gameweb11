@@ -2,8 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
-    "prettier",
-    "airbnb"
+    "prettier"
+    // "airbnb"
   ],
 
   "rules": {

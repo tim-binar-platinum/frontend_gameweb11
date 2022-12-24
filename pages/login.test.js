@@ -8,5 +8,7 @@ describe("Login", () => {
     // check if all components are rendered
     expect(screen.getByTestId("container-login")).toBeInTheDocument();
     expect(screen.getByTestId("form-login")).toBeInTheDocument();
+    expect(screen.getByTestId("button-login")).toBeInTheDocument();
+    expect(screen.getByTestId("button-register")).toBeInTheDocument();
   });
 });
