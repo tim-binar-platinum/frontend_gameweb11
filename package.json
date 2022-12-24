@@ -29,7 +29,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "serve -s build"
+    "deploy": "serve -s build",
+    "start": "next start -p 5000"
   },
   "browserslist": {
     "production": [

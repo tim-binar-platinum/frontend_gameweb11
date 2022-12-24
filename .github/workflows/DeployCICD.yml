@@ -1,0 +1,33 @@
+
+
+name: remote ssh command
+on: 
+  push:
+    branches: [ main ]
+
+jobs:
+
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: 
+          whoami;
+          cd challenge11/frontend_gameweb11;
+          git pull origin main;
+          yarn;
+          yarn build;
+          git status;
+          pm2 restart all;
+          sudo systemctl restart caddy;

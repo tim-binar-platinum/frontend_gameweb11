@@ -1,8 +1,10 @@
-import { settings } from "./configs/game";
+/* eslint-disable indent */
+import { settings } from "../../../configs/game";
 import styles from "../../../styles/Game/Computer.module.css";
 import Image from "next/image";
+import Image from "next/image";
 
-export const Computer = ({
+const Computer = ({
   botScore,
   userSelection,
   botSelection,
@@ -18,6 +20,7 @@ export const Computer = ({
           <h3 className={styles.waitingMessage}>{settings.waitingMessage}</h3>
         ) : (
           <>
+            <Image
             <Image
               src={
                 botSelection === "Rock"
@@ -39,3 +42,5 @@ export const Computer = ({
     </div>
   );
 };
+
+export default Computer;
