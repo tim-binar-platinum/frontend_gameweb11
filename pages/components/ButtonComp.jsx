@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button, Spinner } from "react-bootstrap";
-// import styles from "../../styles/Button.module.css";
+// eslint-disable-next-line no-unused-vars
+import styles from "../../styles/Button.module.css";
 
 function ButtonComp({ onClick, loading }) {
   const [showSpinner, setShowSpinner] = useState(loading);

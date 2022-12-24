@@ -1,8 +1,7 @@
-
 import {
   Button, Container, Form, Label, Input, FormGroup,
 } from "reactstrap";
-import { useState, forwardRef } from "react";
+import React, { useState, forwardRef } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import DatePicker from "react-datepicker";
 import axios from "axios";
@@ -59,7 +58,6 @@ export default function Create() {
     gender: gender.gender,
   };
 
-  // eslint-disable-next-line consistent-return
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!formInput.name) {
