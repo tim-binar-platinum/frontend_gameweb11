@@ -28,7 +28,7 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "serve -s build",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "browserslist": {
     "production": [
